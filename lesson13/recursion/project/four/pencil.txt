@@ -1,0 +1,13 @@
+
+1. d) StackOverflowError: The recursive method recurse calls itself so many times that 
+	 the space needed to store the variables and information associated with each call 
+	 is more than can fit on the stack. 
+	 There is no also base case in the recursive function. The base case should have included 
+	  when the string is empty or with length one. Null string doesn't mean empty string.
+	 
+	 Thus, the recursive method keeps calling it self without termination case.
+	 
+2.  d) StackOverflowError: As in the above question it generates a stack overflow exception.
+	
+	Here in the code there is no way that the self code leads to base case. 
+	Because it keeps permutating without reducing the string to base case. 

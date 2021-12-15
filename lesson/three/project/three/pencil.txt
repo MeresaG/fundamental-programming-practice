@@ -1,0 +1,132 @@
+1.
+
+class Account {
+
+double balance;
+Employee emp;
+
+public double getBalance()
+				{
+return balance; }
+
+}
+/*
+
+The above code have an indentation problem in the class fields as well as methods.
+In addition, the curly braces in the getBalance method are not also well placed. 
+Moreover, make all fields private.
+Finally, the local variable balance is not well indented.
+Below is the modified version of the code. 
+*/
+
+class Account {
+
+	private double balance;
+	private Employee emp;
+	
+	public double getBalance() {
+		return balance; 
+	}
+}
+
+
+
+2.
+
+boolean checkStatus() {
+	if(balance < 200.00 || hasOverdueFines() || (recentPayment < 30.00 && phoneIsDisconnected)) {
+		notifyCollections();
+		return false;
+	}
+	return true;
+}
+
+/*
+ * Parenthesis not used in the if conditions and this leads to precedence confusion. 
+ * To fix this parenthesis should be utilized in the if statement conditionals.
+ * To long if statement, should be placed in new line.
+ * Below I have included the possible solution.
+*/
+
+boolean checkStatus() {
+	if((balance < 200.00 || hasOverdueFines()) 
+		|| (recentPayment < 30.00 && phoneIsDisconnected)) {
+		notifyCollections();
+		return false;
+	}
+	return true;
+}
+
+
+3.
+
+class Company {
+	
+	Employee[] employee;
+	
+	public Employee[] getAllEmployees() {
+		return employee;
+	}
+}
+
+/*
+* Pluralize the names of collection references. employee should be employees.
+*/
+
+class Company {
+	
+	Employee[] employees;
+	
+	public Employee[] getAllEmployees() {
+		return employees;
+	}
+}
+
+
+4.
+
+class Department {
+
+	public double ComputeSalary(Employee emp) {
+		//Assume the methods used here really exist
+		String status = emp.getStatus();
+		double BaseSalary = lookupBaseSalary(status);
+		double Bonus = lookupBonus(emp);
+		return BaseSalary+Bonus;
+	}
+}
+
+
+/*
+* The above code violates naming convention in the function name and variable name.
+* Plus there should be space in the addition operator.
+* To fix the above issue, both variable and function names should start with lowercase and follow camelCaseStyle.
+*/
+
+class Department {
+
+	public double computeSalary(Employee emp) {
+		//Assume the methods used here really exist
+		String status = emp.getStatus();
+		double baseSalary = lookupBaseSalary(status);
+		double bonus = lookupBonus(emp);
+		return baseSalary + bonus;
+	}
+}
+
+5.
+
+/*
+* Both Employee and Manager should be placed in the same package. 
+* I opted employee.role package name for the above two classes. 
+* Because the employees can have different roles.
+
+* And both Customer and CustomerAccount should be placed in the same package.
+* I choose a package name customer.account for the above two classes.
+
+*/
+
+
+
+
+
